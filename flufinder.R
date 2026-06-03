@@ -9,7 +9,7 @@ upload_fasta <- function(fasta_filename) {
              set.attributes = FALSE)
 }
 
-upload_fasta("testfasta.txt")
+
 
 # Function 3
 
@@ -35,15 +35,6 @@ splitpeptides_to_masses <- function(aa) {
   
   lapply(peptide_masses, unlist)
 }
-
-aa <- list(A=list(c("L","V","K"),
-                  c("L","H","H","I","I","F","E","S","M","L","K"), c("D","M","Q","R")),
-           B=list(c("A","D","E","F","Q","G","S","M","Q","K"),
-                  c("I","E","A","C","W","Q","S","Y","D","V","Q","F")),
-           C=list(c("M","I","N","E","P","F","S","W","R"),
-                  c("L","E","F","H","L","S","E","R"), c("Y","D","E","I","M")))
-
-splitpeptides_to_masses(aa)
 
 
 # Function 6
