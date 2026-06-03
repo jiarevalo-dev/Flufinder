@@ -9,7 +9,14 @@ upload_fasta <- function(fasta_filename) {
              set.attributes = FALSE)
 }
 
+#Function 2 
 
+trypsinize <- function(proteins) {
+  
+  library(stringr)
+  
+  lapply(proteins, str_split_1, pattern="(?<=R|K)")
+}
 
 # Function 3
 
@@ -35,7 +42,16 @@ splitpeptides_to_masses <- function(aa) {
   
   lapply(peptide_masses, unlist)
 }
+#Function 5
 
+count_matching_masses <- 
+  function(protein_masses, sample) 
+  {
+    df <- as.data.frame(sapply(protein_masses, function (x)
+      sum(as.character(sample) %in% as.character(x))))
+    names(df) <- "peptide_counts"
+    return(df)
+  }
 
 # Function 6
 
